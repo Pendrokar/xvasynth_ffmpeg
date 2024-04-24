@@ -1,0 +1,27 @@
+{
+    "plugin-name": "ffmpeg Plugin",
+    "author": "Pendrokar",
+    "nexus-link": "",
+    "plugin-version": "0.9.0",
+    "plugin-short-description": "Allows to apply ffmpeg post-processing effects.",
+    "min-app-version": "1.0.0",
+    "install-requires-restart": false,
+    "uninstall-requires-restart": false,
+
+    "front-end-style-files": [],
+
+    "back-end-hooks": {
+        "batch-synth-line": {
+            "post": {
+                "file": "ffmpeg.py",
+                "function": "apply_batch"
+            }
+        },
+        "synth-line": {
+            "post": {
+                "file": "ffmpeg.py",
+                "function": "apply"
+            }
+        }
+    }
+}
